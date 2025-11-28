@@ -36,6 +36,7 @@ public class Registro extends javax.swing.JFrame {
               dispose();
             
         }*/
+        
                 String correo = txtCorreo.getText();
            String pass = String.valueOf(txtPass.getPassword());
            String nom = txtNombre.getText();
@@ -46,6 +47,11 @@ public class Registro extends javax.swing.JFrame {
                JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
                return;
            }
+           // Validar correo
+            if (!correo.contains("@")) {
+                JOptionPane.showMessageDialog(this, "El correo debe contener un '@'.");
+                return;
+            }
 
            // Validación de la contraseña con expresión regular
            // Debe tener: min 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 símbolo
